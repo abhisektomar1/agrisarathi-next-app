@@ -24,7 +24,7 @@ export default function GradualSpacing({
   const lines = text.split('.');
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-start">
       {lines.map((line, lineIndex) => (
         <div key={lineIndex} className="flex justify-center space-x-1">
           <AnimatePresence>

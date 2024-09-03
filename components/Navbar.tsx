@@ -1,100 +1,147 @@
-import React, { useEffect, useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/FloatingNavbar";
-import { cn } from "@/lib/utils";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { MoonStar, SunMoon } from "lucide-react";
-
-const Navbar = ({ className }: { className?: string }) => {
-  const [active, setActive] = useState<string | null>(null);
-
-  const [darkMode, setDarkMode] = useState(false);
-
+import Link from "next/link";
+import { useTheme } from "next-themes";
+function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMenuOpen1, setIsMenuOpen1] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef1 = useRef<HTMLDivElement>(null);
+  const { theme, setTheme } = useTheme();
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
-  return (
-    <div
-      className={cn("relative mx-auto z-50", className)}
-    >
-      <div className="flex flex-row justify-between items-center">
-        <Image
-          src="/logo.svg"
-          width={140}
-          height={70}
-          alt={"logo"}
-          className="flex-shrink-0 rounded-md"
-        />
-        <Menu setActive={setActive}>
-          <MenuItem setActive={setActive} active={active} item="Services">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
-              <HoveredLink href="/interface-design">
-                Interface Design
-              </HoveredLink>
-              <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-              <HoveredLink href="/branding">Branding</HoveredLink>
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Products">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-              <ProductItem
-                title="Algochurn"
-                href="https://algochurn.com"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
-                description="Prepare for tech interviews like never before."
-              />
-              <ProductItem
-                title="Tailwind Master Kit"
-                href="https://tailwindmasterkit.com"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
-              />
-              <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Rogue"
-                href="https://userogue.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-              />
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Pricing">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
-              <HoveredLink href="/individual">Individual</HoveredLink>
-              <HoveredLink href="/team">Team</HoveredLink>
-              <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-            </div>
-          </MenuItem>
-        </Menu>
-        <div className="flex flex-row items-center justify-between gap-4">
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className={`
-        p-2 rounded-lg
-        ${darkMode ? "bg-gray-800 text-white" : " text-gray-800 bg-gray-100"}
-        transition-colors duration-200
-      `}
-        >
-          {darkMode ? <SunMoon /> : <MoonStar />}
-        </button>
-        <button className="px-4 py-2 rounded-xl border  text-white bg-[#ff4a26] hover:bg-gray-100 transition duration-200">
-          Login
-        </button>
-        </div>
-      
-      </div>
-    </div>
-  );
-};
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+      if (
+        menuRef1.current &&
+        !menuRef1.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen1(false);
+      }
+    };
 
-export default Navbar;
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleMenu1 = () => {
+    setIsMenuOpen1(!isMenuOpen1);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <header className="flex h-20 items-center justify-between bg-[#F3F3F3]  mx-auto sm:px-20 px-10 md:px-12">
+      <Image src="/logo1.svg" width={150} height={150} alt={"logo"} />
+
+      <div className="md:hidden">
+        <button onClick={toggleMobileMenu} className="focus:outline-none">
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        className={`fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden ${
+          isMobileMenuOpen ? "block" : "hidden"
+        }`}
+        onClick={toggleMobileMenu}
+      >
+        <div className="fixed right-0 top-0 h-full w-3/4 max-w-xs bg-white p-4">
+          <button
+            onClick={toggleMobileMenu}
+            className="mb-4 focus:outline-none"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+          <nav className="space-y-2">
+            <a
+              href="/"
+              className="block text-base text-black hover:text-gray-700"
+            >
+              Home
+            </a>
+            <a
+              href="/community-forum"
+              className="block text-base text-black hover:text-gray-700"
+            >
+              Community Forum
+            </a>
+            {/* Add more links as needed */}
+          </nav>
+        </div>
+      </div>
+
+      <div className="hidden items-center space-x-5 md:flex">
+        <nav>
+          <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div className="flex space-x-8">
+              <Link
+                href="/"
+                className="text-primary font-semibold hover:text-[#26A151] dark:hover:text-white"
+              >
+                Home
+              </Link>
+              <Link
+                href="/fpo"
+                className="text-gray-600 hover:text-[#26A151] dark:text-gray-400 dark:hover:text-white"
+              >
+                FPO
+              </Link>
+              <Link
+                href="/farmers"
+                className="text-gray-600 hover:text-[#26A151] dark:text-gray-400 dark:hover:text-white"
+              >
+                Farmers
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-600 hover:text-[#26A151] dark:text-gray-400 dark:hover:text-white"
+              >
+                About Us
+              </Link>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export default React.memo(Header);

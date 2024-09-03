@@ -11,18 +11,21 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
  
   return (
-    <main className="bg-[#ffffff] h-screen dark:bg-black  mx-auto sm:px-20 px-10">
-      <div className="w-full">
+    <>
         <Navbar />
-        <HeroSection/>
+    <main className="bg-[#ffffff] h-screen dark:bg-black  mx-auto sm:px-20 px-6">
+      <div className="w-full">
+       <HeroSection/> 
         <ImageSlider />
         <Cards />
         <CanvasRevealEffectDemo />
-        <GlobeDemo />
+        {/* <GlobeDemo /> */}
         {/* <MarqueeDemo />
         <ThreeDCardDemo /> */}
 
       </div>
     </main>
+    </>
+    
   );
 }
