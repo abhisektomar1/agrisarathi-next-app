@@ -19,9 +19,9 @@ export default function Home() {
         <Cards />
         <CanvasRevealEffectDemo />
         <GlobeDemo />
-        <MarqueeDemo />
-        <ThreeDCardDemo />
-     
+        {/* <MarqueeDemo />
+        <ThreeDCardDemo /> */}
+
       </div>
     </main>
   );
