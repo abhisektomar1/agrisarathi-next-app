@@ -42,7 +42,7 @@ function Header() {
   };
 
   return (
-    <header className="flex h-20 items-center justify-between bg-[#F3F3F3]  mx-auto sm:px-20 px-10 md:px-12">
+    <header className="flex h-20 items-center justify-between bg-[#F3F3F3]  mx-auto sm:px-20 px-10 md:px-20">
       <Image src="/logo1.svg" width={150} height={150} alt={"logo"} />
 
       <div className="md:hidden">
