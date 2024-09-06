@@ -20,7 +20,7 @@ export default function Home() {
       <div className="w-full">
        <HeroSection/> 
        <FeatureSection />
-       <Partnership />
+       {/* <Partnership /> */}
        <Features />
         {/* <ImageSlider />
         <Cards />

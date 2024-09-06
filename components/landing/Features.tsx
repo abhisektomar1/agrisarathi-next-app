@@ -3,40 +3,7 @@ import { Card, CardContent } from '../ui/card';
 import { AtSign, DollarSign, Droplets, FileText, Leaf, Search, Shovel, Sprout } from 'lucide-react';
 
 export default function Features() {
-  const features = [
-    {
-      icon: '🌾',
-      text: "Multiple Crops' Advisory based on Package of Practices",
-    },
-    {
-      icon: '🌐',
-      text: 'Available in Ten Languages',
-    },
-    {
-      icon: '🦠',
-      text: 'Disease Detection to Cure - Linkage to Input Suppliers',
-    },
-    {
-      icon: '🧪',
-      text: 'Fertilizer Calculator - as per Soil Structure and Application at Different Stages',
-    },
-    {
-      icon: '🌡️',
-      text: 'Production and Cultivation Tips - Climate Tips I Crop Recommendations',
-    },
-    {
-      icon: '📊',
-      text: 'Crop Analytics - Cost/Selling price I Yield per Hectare I Price Comparison Across Different Varieties',
-    },
-    {
-      icon: '🧬',
-      text: 'Soil Testing',
-    },
-    {
-      icon: '🏪',
-      text: "Buying and Selling Information through 'Dukan' and 'Mandi'",
-    },
-  ];
+ 
 
   return (
     <div className="container mx-auto px-4 py-8">
