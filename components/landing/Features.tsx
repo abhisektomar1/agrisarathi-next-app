@@ -1,69 +1,51 @@
-import React from 'react';
-import { Card, CardContent } from '../ui/card';
-import { AtSign, DollarSign, Droplets, FileText, Leaf, Search, Shovel, Sprout } from 'lucide-react';
+import Image from 'next/image'
+import { useState } from 'react'
+
+const features = [
+  { icon: '/features/crops.svg', title: "Multiple Crops' Advisory Based On Package Of Practices" },
+  { icon: '/features/vector.png', title: "Data Analysis and Insights" },
+  { icon: '/features/crops.svg', title: "Crop Monitoring" },
+  { icon: '/features/crops.svg', title: "Seasonal Planning" },
+  { icon: '/features/crops.svg', title: "Soil Management" },
+  { icon: '/features/crops.svg', title: "Yield Forecasting" },
+  { icon: '/features/crops.svg', title: "Irrigation Management" },
+  { icon: '/features/crops.svg', title: "Market Connectivity" },
+]
 
 export default function Features() {
- 
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8">Salient Features/Core Functions</h2>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-8">
-              <Card className="w-full max-w-sm bg-green-500">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <Leaf className="h-8 w-8 text-white mb-2" />
-                  <h3 className="font-semibold text-center text-white">Production</h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <AtSign className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">
-                    Fertilizer Calculator
-                  </h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <Search className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">Detect Disease</h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <Sprout className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">Crop Suggestion</h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <DollarSign className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">
-                    Farmer Economics
-                  </h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <Droplets className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">
-                    Irrigation Alarm
-                  </h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <Shovel className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">Soil Testing</h3>
-                </CardContent>
-              </Card>
-              <Card className="w-full max-w-sm">
-                <CardContent className="flex flex-col items-center justify-center p-4">
-                  <FileText className="h-8 w-8 text-green-500 mb-2" />
-                  <h3 className="font-semibold text-center">Govt. Schemes</h3>
-                </CardContent>
-              </Card>
-            </div>
+    <div className="container mx-auto px-4 py-16">
+    <h2 className="text-3xl font-bold text-center mb-12">Salient Features/Core Functions</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {features.map((feature, index) => (
+        <div
+          key={index}
+          className={`w-full h-48 flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-300 ease-in-out ${
+            index === 0 || hoveredIndex === index
+              ? 'bg-green-500 text-white'
+              : 'border-green-500 hover:bg-green-500 hover:text-white'
+          }`}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <div className="relative w-16 h-16 mb-4">
+            <Image
+              src={feature.icon}
+              alt={feature.title}
+              layout="fill"
+              className={`transition-colors duration-300 ${
+                index === 0 || hoveredIndex === index ? 'text-white' : 'text-green-500'
+              }`}
+            />
+          </div>
+          <h3 className="text-lg font-semibold text-center">
+            {index === 0 || hoveredIndex === index ? feature.title : ''}
+          </h3>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+  )
 }

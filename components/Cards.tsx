@@ -48,7 +48,7 @@ function Cards() {
         <GradualSpacing
           className="font-display text-center text-4xl font-bold tracking-[-0.1em]  text-black dark:text-white md:text-7xl md:leading-[5rem]"
           text="Got space of your own?.
-We make sharing easy"
+             We make sharing easy"
         />
         <HoverEffect items={projects} />
       </div>

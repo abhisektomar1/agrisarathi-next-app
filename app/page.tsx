@@ -20,10 +20,10 @@ export default function Home() {
       <div className="w-full">
        <HeroSection/> 
        <FeatureSection />
-       {/* <Partnership /> */}
        <Features />
+       <Partnership />
+       {/* <Cards /> */}
         {/* <ImageSlider />
-        <Cards />
         <CanvasRevealEffectDemo /> */}
         {/* <GlobeDemo /> */}
         {/* <MarqueeDemo />
