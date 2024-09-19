@@ -10,6 +10,8 @@ import { MarqueeDemo } from "@/components/InfiniteList";
 import Navbar from "@/components/landing/Navbar";
 import Partnership from "@/components/landing/Partnership";
 import Features from "@/components/landing/Features";
+import ImageSlider1 from "@/components/landing/Image-slider";
+import Map from "@/components/landing/Map";
 
 export default function Home() {
  
@@ -21,6 +23,8 @@ export default function Home() {
        <HeroSection/> 
        <FeatureSection />
        <Features />
+       <ImageSlider1 />
+       <Map />
        <Partnership />
        {/* <Cards /> */}
         {/* <ImageSlider />
