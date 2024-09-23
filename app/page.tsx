@@ -12,6 +12,9 @@ import Partnership from "@/components/landing/Partnership";
 import Features from "@/components/landing/Features";
 import ImageSlider1 from "@/components/landing/Image-slider";
 import Map from "@/components/landing/Map";
+import { BentoGridSecondDemo } from "@/components/landing/Bentogrid";
+import ComingSoonSection from "@/components/landing/ComingSoon";
+import Footer from "@/components/landing/Footer";
 
 export default function Home() {
  
@@ -25,7 +28,10 @@ export default function Home() {
        <Features />
        <ImageSlider1 />
        <Map />
+       <BentoGridSecondDemo />
+       <ComingSoonSection />
        <Partnership />
+       <Footer />
        {/* <Cards /> */}
         {/* <ImageSlider />
         <CanvasRevealEffectDemo /> */}
