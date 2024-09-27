@@ -120,10 +120,10 @@ function Header() {
                 Home
               </Link>
               <Link
-                href="/fpo"
+                href="/know-more"
                 className="text-gray-600 hover:text-[#26A151] dark:text-gray-400 dark:hover:text-white"
               >
-                FPO
+                Know More
               </Link>
               <Link
                 href="/farmers"
