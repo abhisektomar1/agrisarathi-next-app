@@ -80,6 +80,7 @@ function Slider() {
                           alt="features-icons"
                           width={50}
                           height={50}
+                          quality={100}
                         />
                       </div>
                       <div>

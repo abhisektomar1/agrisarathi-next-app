@@ -101,6 +101,7 @@ export default function EmpoweringFarmersSection() {
           </div>
         </div>
       </div>
+      {/* coming section */}
       <ComingSoonSection />
     </section>
   )
