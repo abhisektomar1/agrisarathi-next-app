@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import GradualSpacing from "../magicui/gradual-spacing";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const fadeInUp:any = {
   initial: { opacity: 0, y: 20 },
@@ -30,6 +31,8 @@ const staggerChildren = {
 };
 
 export default function HeroSection() {
+
+  const router = useRouter();
   return (
     <motion.section 
       initial={{ opacity: 0 }}
@@ -64,7 +67,9 @@ export default function HeroSection() {
               Optimization, Leading To Higher Yields And Increased Income, All
               Through A Unified Digital Platform.
             </motion.p>
-            <motion.div variants={fadeInUp} className="flex flex-col gap-2 min-[400px]:flex-row">
+            <motion.div variants={fadeInUp} className="flex flex-col gap-2 min-[400px]:flex-row" onClick={() =>{
+                  router.push("/know-more");
+            }}>
               <Button className="inline-flex h-8 items-center justify-center rounded-md bg-green-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-green-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-500 disabled:pointer-events-none disabled:opacity-50 dark:bg-green-50 dark:text-green-900 dark:hover:bg-green-50/90 dark:focus-visible:ring-green-300">
                 Know More
               </Button>

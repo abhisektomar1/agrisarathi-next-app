@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Navigation Links */}
           <div className="space-y-4">
-            <Link href="/fpo" className="block text-gray-600 hover:text-gray-900">FPO</Link>
+            {/* <Link href="/fpo" className="block text-gray-600 hover:text-gray-900">FPO</Link> */}
             <Link href="/farmers" className="block text-gray-600 hover:text-gray-900">Farmers</Link>
             <Link href="/about-us" className="block text-gray-600 hover:text-gray-900">About Us</Link>
-            <Link href="/privacy-policy" className="block text-gray-600 hover:text-gray-900">Privacy Policy</Link>
-            <Link href="/careers" className="block text-gray-600 hover:text-gray-900">Careers</Link>
+            {/* <Link href="/privacy-policy" className="block text-gray-600 hover:text-gray-900">Privacy Policy</Link>
+            <Link href="/careers" className="block text-gray-600 hover:text-gray-900">Careers</Link> */}
           </div>
 
           {/* Contact Information */}
