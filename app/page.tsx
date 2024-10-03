@@ -8,6 +8,8 @@ import Map from "@/components/landing/Map";
 import ComingSoonSection from "@/components/landing/ComingSoon";
 import React from "react";
 
+//main layout
+
 export default function Home() {
   return (
     <>
