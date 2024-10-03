@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Bottom Row */}
         <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-gray-900">
+            <Link href="/privacyPolicy" className="text-sm text-gray-600 hover:text-gray-900">
               Privacy Policy Terms & Conditions
             </Link>
           </div>

@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/know-more', label: 'Know More' },
   { href: '/farmers', label: 'Farmers' },
+  { href: '/fpo', label: 'FPO' },
   { href: '/about', label: 'About Us' },
   { href: '/careers', label: 'Careers' },
 ];
