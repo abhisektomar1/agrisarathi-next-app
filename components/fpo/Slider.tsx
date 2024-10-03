@@ -14,21 +14,21 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: 1,
-    image: '/placeholder.svg?height=400&width=600',
+    image: '/fpo/1.png',
     title: 'Member Engagement',
     description: 'FPOs Can Unlock The Power Of Social Engagement To Enable Their Member Farmers With New Information, Engage Through Meeting Or Knowledge, Provide Support As Needed And With Knowledge On How Each Member Is Progressing With Production, Drive Economy Of Scale.'
   },
   {
     id: 2,
-    image: '/placeholder.svg?height=400&width=600',
-    title: 'Sustainable Farming',
-    description: 'Promote eco-friendly practices that preserve soil health and biodiversity while ensuring long-term productivity and profitability for farmers.'
+    image: '/fpo/2.png',
+    title: 'FPO as input service provider',
+    description: 'Agrisarathi platform enables FPOs to start their own multi brand input marketplace, in digital and physical formats'
   },
   {
     id: 3,
-    image: '/placeholder.svg?height=400&width=600',
-    title: 'Market Access',
-    description: 'Connect farmers directly to markets, eliminating intermediaries and ensuring fair prices for produce through our innovative platform.'
+    image: '/fpo/3.png',
+    title: 'Driving Market linkage',
+    description: 'Agrisarathi platform enhances the ability of FPO Cooperatives to provide better price to there members with quality assaying and traceability tools. FPOs draws onto the partnership of national and global offtakers that Agrisarathi brings together.'
   }
 ]
 
@@ -81,7 +81,7 @@ export default function ImageSlider() {
         <button
           onClick={nextSlide}
           className="absolute right-4 z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md hover:bg-opacity-75 transition-all duration-200"
-        >
+        >   
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
