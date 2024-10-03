@@ -57,7 +57,7 @@ export default function EmpoweringFarmersSection() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <h2 className="text-4xl md:text-6xl font-bold mb-4 md:mb-0 leading-7">
-            Empowering<br /> Farmers 
+            Empowering Farmers 
             for a <br /> <span className="text-green-600">Thriving Future</span>
           </h2>
           <Image
