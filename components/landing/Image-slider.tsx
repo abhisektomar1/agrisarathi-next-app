@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 const slides = [
   {
@@ -9,20 +10,22 @@ const slides = [
     image: '/slider/image.png',
     title: 'Farmers',
     description: 'A Game Changer For The Agricultural Industry AgriSmart Helps The Farmers By Optimizing Farm Revenue, Digitization, Access To Inputs And Improving Quality.',
-    button: 'Know More'
+    button: 'Know More',
+    link:"/farmer",
   },
   {
     id: 2,
     image: '/slider/image2.png',
     title: 'FPOs/Cooperatives',
     description: 'AgriSmart Is Designed For FPOs/Cooperatives, So They Can Take Control Of These Business Providing Better Value For Members And Scale With New Income Opportunities.',
+    link:"/fpo",
     button: 'Know More'
   }
 ]
 
 export default function ImageSlider1() {
   const [currentSlide, setCurrentSlide] = useState(0)
-
+  const router = useRouter()
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length)
@@ -50,7 +53,9 @@ export default function ImageSlider1() {
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-8 text-white">
             <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
             <p className="mb-6 text-sm md:text-base lg:text-lg max-w-2xl">{slide.description}</p>
-            <button className="bg-transparent text-white py-2 px-6 border-white border rounded self-start hover:bg-opacity-80 transition-colors duration-300">
+            <button onClick={() => {
+                router.push(slide.link)
+            }} className="bg-transparent text-white py-2 px-6 border-white border rounded self-start hover:bg-opacity-80 transition-colors duration-300">
               {slide.button}
             </button>
           </div>

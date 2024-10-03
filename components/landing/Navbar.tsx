@@ -53,7 +53,9 @@ function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="flex h-20 items-center justify-between bg-[#F3F3F3] mx-auto sm:px-20 px-10 md:px-20">
+        <Link href="/">
         <Image src="/logo1.svg" width={150} height={150} alt={"logo"} />
+        </Link>
 
         <div className="md:hidden">
           <button onClick={toggleMobileMenu} className="focus:outline-none">

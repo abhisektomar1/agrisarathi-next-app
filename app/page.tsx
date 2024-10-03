@@ -13,6 +13,7 @@ import ImageSlider1 from "@/components/landing/Image-slider";
 import Map from "@/components/landing/Map";
 import { BentoGridSecondDemo } from "@/components/landing/Bentogrid";
 import ComingSoonSection from "@/components/landing/ComingSoon";
+import React from "react";
 
 export default function Home() {
   return (
