@@ -14,7 +14,7 @@ export default function ComingSoonSection() {
     <section className="w-full min-h-screen bg-white flex items-center justify-center p-4 md:p-8">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-[58%_42%] gap-8 items-center">
         <div className="rounded-3xl overflow-hidden">
-          <Image
+          <Image  
             src="/phone1.png"
             alt="Agrisarathi App Interface"
             width={800}
